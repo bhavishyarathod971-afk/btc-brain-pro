@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BTC BRAIN PRO</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>BTC BRAIN PRO</h1>
+    <p>PAPER / ANALYSIS ONLY</p>
+  </header>
+
+  <nav>
+    <button onclick="showTab('dashboard')">Dashboard</button>
+    <button onclick="showTab('scanner')">Scanner</button>
+    <button onclick="showTab('plans')">Plans</button>
+    <button onclick="showTab('diagnostics')">Diagnostics</button>
+  </nav>
+
+  <main>
+    <section id="dashboard" class="tab">
+      <h2>Dashboard</h2>
+      <p>Welcome to BTC BRAIN PRO</p>
+    </section>
+
+    <section id="scanner" class="tab" hidden>
+      <h2>Market Scanner</h2>
+    </section>
+
+    <section id="plans" class="tab" hidden>
+      <h2>Trading Plans</h2>
+    </section>
+
+    <section id="diagnostics" class="tab" hidden>
+      <h2>Diagnostics</h2>
+      <div id="errorLog">System ready.</div>
+      <button onclick="testError()">Test Error</button>
+    </section>
+  </main>
+
+  <script>
+    function showTab(id) {
+      document.querySelectorAll('.tab').forEach(tab => {
+        tab.hidden = true;
+      });
+      document.getElementById(id).hidden = false;
+    }
+
+    function testError() {
+      document.getElementById('errorLog').innerText =
+        'Test error detected successfully.';
+    }
+  </script>
+
+</body>
+</html>
